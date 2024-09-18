@@ -20,7 +20,9 @@ In terminal, navigate to trello_clone folder. Run ./gradlew bootRun . In another
 
 # App preview:
 
-Due to the video size you have to download the file: ./assets/appPreview.mov
+![APPPHOTO](./assets/appPreviewPhoto.png)
+
+If you want to see full functionality, due to the video size you have to download the following file: ./assets/appPreview.mov
 
 # TODO:
 
