@@ -1,0 +1,56 @@
+<div *ngIf="tasks.length > 0" class="container mx-auto py-4">
+  <div *ngFor="let task of tasks" class="bg-amber-200 p-4 mb-4 rounded-lg">
+    <ul>
+      <li class="flex flex-col">
+        <div class="flex justify-between items-center w-full">
+          <span class="text-gray-800 text-lg font-semibold">
+            {{ task.taskName }}
+          </span>
+          <span
+            (click)="removeTask(task)"
+            class="cursor-pointer text-red-500 hover:text-red-700 flex items-center"
+          >
+            <svg
+              class="h-6 w-6 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </span>
+        </div>
+
+        <div class="mt-2">
+          <input
+            [(ngModel)]="task.description"
+            (keydown.enter)="saveDescription(task)"
+            placeholder="Enter description"
+            class="appearance-none bg-transparent border-b border-gray-300 w-full text-gray-700 py-1 leading-tight focus:outline-none"
+          />
+          <div class="mt-2">
+            <span
+              *ngIf="!task.hasDescription"
+              (click)="saveDescription(task)"
+              class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+            >
+              Add Description
+            </span>
+            <span
+              *ngIf="task.hasDescription"
+              (click)="removeDescription(task)"
+              class="flex-shrink-0 bg-red-500 hover:bg-red-700 border-red-500 hover:border-red-700 text-sm border-4 text-white py-1 px-2 rounded"
+            >
+              Remove Description
+            </span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

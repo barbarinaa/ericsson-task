@@ -4,7 +4,6 @@ import com.barb.trello_clone.model.Board;
 import com.barb.trello_clone.repository.BoardRepository;
 
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.PersistenceContext;
 
 import org.springframework.beans.factory.annotation.Autowired;

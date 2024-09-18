@@ -1,0 +1,19 @@
+<div class="ml-8 py-4 flex-col">
+  <button
+    (click)="addBoard()"
+    class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 rounded w-1/4"
+  >
+    New Board
+  </button>
+  <div class="flex flex-wrap gap-4 p-4 rounded">
+    <div
+      *ngFor="let board of boards"
+      class="bg-gray-300 sm:w-1/2 md:w-1/3 lg:w-1/4 rounded"
+    >
+      <app-board
+        [board]="board"
+        (boardUpdated)="updateBoard($event)"
+      ></app-board>
+    </div>
+  </div>
+</div>

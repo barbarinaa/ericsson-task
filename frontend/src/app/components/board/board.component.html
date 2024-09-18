@@ -1,0 +1,23 @@
+<div class="board p-4 border border-gray-300 rounded-lg">
+  <div class="mb-4">
+    <ng-container *ngIf="isEditing; else showBoardName">
+      <label for="boardName" class="sr-only">Board Name</label>
+      <input
+        [(ngModel)]="boardName"
+        (keydown.enter)="handleEnter()"
+        (blur)="finishEditing()"
+        placeholder="Enter board name"
+        class="w-full p-2 border border-teal-300 bg-teal-200 rounded"
+      />
+    </ng-container>
+    <ng-template #showBoardName>
+      <h1
+        class="text-2xl font-bold mb-4 cursor-pointer"
+        (click)="startEditing()"
+      >
+        {{ boardName || "Untitled Board" }}
+      </h1>
+    </ng-template>
+  </div>
+  <app-tasks-form></app-tasks-form>
+</div>
